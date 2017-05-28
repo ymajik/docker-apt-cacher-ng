@@ -1,6 +1,6 @@
-[![Circle CI](https://circleci.com/gh/sameersbn/docker-apt-cacher-ng.svg?style=shield)](https://circleci.com/gh/sameersbn/docker-apt-cacher-ng) [![Docker Repository on Quay.io](https://quay.io/repository/sameersbn/apt-cacher-ng/status "Docker Repository on Quay.io")](https://quay.io/repository/sameersbn/apt-cacher-ng)
+[![Docker Automated build](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/ymajik/docker-apt-cacher-ng/builds/)
 
-# sameersbn/apt-cacher-ng:latest
+# ymajik/apt-cacher-ng:latest
 
 - [Introduction](#introduction)
   - [Contributing](#contributing)
@@ -47,18 +47,18 @@ If the above recommendations do not help then [report your issue](../../issues/n
 
 ## Installation
 
-Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/sameersbn/apt-cacher-ng) and is the recommended method of installation.
+Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/ymajik/apt-cacher-ng) and is the recommended method of installation.
 
-> **Note**: Builds are also available on [Quay.io](https://quay.io/repository/sameersbn/apt-cacher-ng)
+> **Note**: Builds are also available on [Quay.io](https://quay.io/repository/ymajik/apt-cacher-ng)
 
 ```bash
-docker pull sameersbn/apt-cacher-ng:latest
+docker pull ymajik/apt-cacher-ng:latest
 ```
 
 Alternatively you can build the image yourself.
 
 ```bash
-docker build -t sameersbn/apt-cacher-ng github.com/sameersbn/docker-apt-cacher-ng
+docker build -t ymajik/apt-cacher-ng github.com/ymajik/docker-apt-cacher-ng
 ```
 
 ## Quickstart
@@ -69,7 +69,7 @@ Start Apt-Cacher NG using:
 docker run --name apt-cacher-ng -d --restart=always \
   --publish 3142:3142 \
   --volume /srv/docker/apt-cacher-ng:/var/cache/apt-cacher-ng \
-  sameersbn/apt-cacher-ng:latest
+  ymajik/apt-cacher-ng:latest
 ```
 
 *Alternatively, you can use the sample [docker-compose.yml](docker-compose.yml) file to start the container using [Docker Compose](https://docs.docker.com/compose/)*
@@ -82,7 +82,7 @@ You can customize the launch command of Apt-Cacher NG server by specifying argum
 docker run --name apt-cacher-ng -it --rm \
   --publish 3142:3142 \
   --volume /srv/docker/apt-cacher-ng:/var/cache/apt-cacher-ng \
-  sameersbn/apt-cacher-ng:latest -h
+  ymajik/apt-cacher-ng:latest -h
 ```
 
 ## Persistence
@@ -132,7 +132,7 @@ Using the [Command-line arguments](#command-line-arguments) feature, you can spe
 docker run --name apt-cacher-ng -it --rm \
   --publish 3142:3142 \
   --volume /srv/docker/apt-cacher-ng:/var/cache/apt-cacher-ng \
-  sameersbn/apt-cacher-ng:latest -e
+  ymajik/apt-cacher-ng:latest -e
 ```
 
 The same can also be achieved on a running instance by visiting the url http://localhost:3142/acng-report.html in the web browser and selecting the **Start Scan and/or Expiration** option.
@@ -144,7 +144,7 @@ To upgrade to newer releases:
   1. Download the updated Docker image:
 
   ```bash
-  docker pull sameersbn/apt-cacher-ng:latest
+  docker pull ymajik/apt-cacher-ng:latest
   ```
 
   2. Stop the currently running image:
@@ -164,7 +164,7 @@ To upgrade to newer releases:
   ```bash
   docker run -name apt-cacher-ng -d \
     [OPTIONS] \
-    sameersbn/apt-cacher-ng:latest
+    ymajik/apt-cacher-ng:latest
   ```
 
 ## Shell Access
