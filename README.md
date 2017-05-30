@@ -1,4 +1,5 @@
 [![Docker Automated build](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/ymajik/docker-apt-cacher-ng/builds/)
+[![Build Status](https://travis-ci.org/ymajik/docker-apt-cacher-ng.svg?branch=testing)](https://travis-ci.org/ymajik/docker-apt-cacher-ng)
 
 # ymajik/apt-cacher-ng:latest
 
