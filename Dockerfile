@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:jessie-slim
 MAINTAINER ymajik@gmail.com
 
 ENV APT_CACHER_NG_VERSION=0.8.0 \
