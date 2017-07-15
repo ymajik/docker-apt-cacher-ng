@@ -1,5 +1,5 @@
 FROM debian:jessie-slim
-MAINTAINER ymajik@gmail.com
+LABEL maintainer=ymajik@gmail.com
 
 ENV APT_CACHER_NG_VERSION=0.8.0 \
     APT_CACHER_NG_CACHE_DIR=/var/cache/apt-cacher-ng \
