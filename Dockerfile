@@ -1,7 +1,7 @@
-FROM debian:jessie-slim
+FROM debian:stretch-slim
 LABEL maintainer=ymajik@gmail.com
 
-ENV APT_CACHER_NG_VERSION=0.8.0 \
+ENV APT_CACHER_NG_VERSION=2-2 \
     APT_CACHER_NG_CACHE_DIR=/var/cache/apt-cacher-ng \
     APT_CACHER_NG_LOG_DIR=/var/log/apt-cacher-ng \
     APT_CACHER_NG_USER=apt-cacher-ng
