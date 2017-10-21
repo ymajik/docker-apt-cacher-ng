@@ -1,4 +1,4 @@
-[![Docker Automated build](https://img.shields.io/docker/automated/ymajik/apt-cacher-ng.svg)](https://hub.docker.com/r/ymajik/docker-apt-cacher-ng/builds/)
+[![Docker Automated build](https://img.shields.io/docker/automated/ymajik/docker-apt-cacher-ng.svg)](https://hub.docker.com/r/ymajik/docker-apt-cacher-ng/builds/)
 [![Build Status](https://travis-ci.org/ymajik/docker-apt-cacher-ng.svg?branch=master)](https://travis-ci.org/ymajik/docker-apt-cacher-ng)
 
 # ymajik/apt-cacher-ng:latest
