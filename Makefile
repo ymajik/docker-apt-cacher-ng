@@ -14,11 +14,11 @@ prep:
 lint:
 ifeq ($(hadolint_available),0)
 	@$(hadolint_command) docker-apt-cacher-ng/Dockerfile
-    else
+else
 	@docker pull $(hadolint_container)
 	@docker run --rm -v $(PWD)/docker-apt-cacher-ng/Dockerfile \
 		-i $(hadolint_container) $(hadolint_command) Dockerfile
-	endif
+endif
 
 build: prep
 	docker build \
