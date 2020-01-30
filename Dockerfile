@@ -2,6 +2,7 @@ FROM debian:buster-slim
 
 ARG vcs_ref
 ARG build_date
+ARG version="3.2-2"
 
 LABEL org.label-schema.name = "ymajik/docker-apt-cacher-ng" \
       org.label-schema.description = "Deploy apt-cacher-ng for caching apt repos" \
