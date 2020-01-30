@@ -17,7 +17,7 @@ build:
 		--build-arg build_date=$(build_date) \
 		--build-arg version=$(VERSION) \
 		--file Dockerfile \
-		--tag docker-apt-cacher-ng:$(VERSION) \
+		--tag apt-cacher-ng:$(VERSION) \
 		.	
 
 run:
