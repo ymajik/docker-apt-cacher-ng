@@ -1,8 +1,8 @@
-FROM debian:buster-slim
-
 ARG vcs_ref
 ARG build_date
-ARG version="dev"
+ARG version="0.0.1"
+
+FROM debian:buster-slim
 
 LABEL org.label-schema.name = "ymajik/docker-apt-cacher-ng" \
       org.label-schema.description = "Deploy apt-cacher-ng for caching apt repos" \
@@ -28,7 +28,6 @@ RUN chmod 755 /sbin/entrypoint.sh
 
 EXPOSE 3142/tcp
 
-
 HEALTHCHECK --interval=10s --timeout=2s --retries=3 \
    CMD wget -q0 - http://localhost:3142/acng-report.html || exit 1
 
@@ -36,7 +35,8 @@ VOLUME ["${APT_CACHER_NG_CACHE_DIR}"]
 
 ENTRYPOINT ["/sbin/entrypoint.sh"]
 
-LABEL org.label-schema.vcs-ref="$vcs_ref" \
+LABEL org.label-schema.version="$version" \
+      org.label-schema.vcs-ref="$vcs_ref" \
       org.label-schema.build-date="$build_date"
 
 CMD ["/usr/sbin/apt-cacher-ng"]
