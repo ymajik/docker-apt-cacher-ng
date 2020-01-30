@@ -1,5 +1,5 @@
 NAMESPACE ?= ymajik
-VERSION ?= $(shell echo $(git_describe) | sed 's/-.*//')
+VERSION ?= $(shell git rev-parse --abbrev-ref HEAD)
 git_describe = $(shell git describe)
 vcs_ref := $(shell git rev-parse HEAD)
 build_date := $(shell date -u +%FT%T)
