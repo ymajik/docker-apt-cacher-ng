@@ -13,11 +13,10 @@ prep:
 
 lint:
 ifeq ($(hadolint_available),0)
-	@$(hadolint_command) docker-apt-cacher-ng/Dockerfile
+	@$(hadolint_command) Dockerfile
 else
 	@docker pull $(hadolint_container)
-	@docker run --rm -v $(PWD)/docker-apt-cacher-ng/Dockerfile \
-		-i $(hadolint_container) $(hadolint_command) Dockerfile
+	@docker run --rm -i $(hadolint_container) $(hadolint_command) Dockerfile
 endif
 
 build: prep
@@ -34,7 +33,7 @@ build: prep
 		--build-arg build_date=$(build_date) \
 		--build-arg version=$(VERSION) \
 		--file docker-apt-cacher-ng/$(dockerfile) \
-		--tag $(NAMESPACE)/docker-apt-cacher-ng:$(VERSION) $(dockerfile_context)
+		--tag $(NAMESPACE)/docker-apt-cacher-ng:$(VERSION) 
 	
 
 run:
