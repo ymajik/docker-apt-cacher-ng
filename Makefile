@@ -17,12 +17,13 @@ build:
 		--build-arg build_date=$(build_date) \
 		--build-arg version=$(VERSION) \
 		--file Dockerfile \
-		--tag docker-apt-cacher-ng:$(VERSION) 
-		
+		--tag docker-apt-cacher-ng:$(VERSION) \
+		.	
+
 run:
-	docker run -d -p 127.0.0.1:3142:3142 --name apt-cacher-ng apt-cacher-ng 	
+	@docker run -d -p 127.0.0.1:3142:3142 --name apt-cacher-ng apt-cacher-ng 	
 
 script:
-	docker ps | grep -q apt-cacher-ng
+	@docker ps | grep -q apt-cacher-ng
 
 .PHONY: prep lint build run script
