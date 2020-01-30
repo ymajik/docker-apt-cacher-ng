@@ -21,7 +21,7 @@ build:
 		.	
 
 run:
-	@docker run -d -p 127.0.0.1:3142:3142 --name apt-cacher-ng apt-cacher-ng 	
+	@docker run -d -p 127.0.0.1:3142:3142 --name apt-cacher-ng apt-cacher-ng:$(VERSION) 	
 
 script:
 	@docker ps | grep -q apt-cacher-ng
