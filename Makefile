@@ -3,7 +3,6 @@ VERSION ?= $(shell echo $(git_describe) | sed 's/-.*//')
 git_describe = $(shell git describe)
 vcs_ref := $(shell git rev-parse HEAD)
 build_date := $(shell date -u +%FT%T)
-hadolint_available := $(shell hadolint --help > /dev/null 2>&1; echo $$?)
 hadolint_command := hadolint --ignore DL3008 --ignore DL3018 --ignore DL3028 --ignore DL4000 --ignore DL4001
 hadolint_container := hadolint/hadolint:latest
 
@@ -12,12 +11,8 @@ prep:
 	@git fetch origin 'refs/tags/*:refs/tags/*'
 
 lint:
-ifeq ($(hadolint_available),0)
-	@$(hadolint_command) Dockerfile
-else
 	@docker pull $(hadolint_container)
-	@docker run --rm -i $(hadolint_container) $(hadolint_command) Dockerfile
-endif
+	@docker run --rm -i $(hadolint_container) $(hadolint_command) - < Dockerfile
 
 build: prep
 	docker build \
