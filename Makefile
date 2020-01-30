@@ -1,5 +1,5 @@
 NAMESPACE ?= ymajik
-VERSION ?= $(shell git rev-parse --abbrev-ref HEAD)
+VERSION ?= dev
 git_describe = $(shell git describe)
 vcs_ref := $(shell git rev-parse HEAD)
 build_date := $(shell date -u +%FT%T)
@@ -27,8 +27,8 @@ build: prep
 		--build-arg vcs_ref=$(vcs_ref) \
 		--build-arg build_date=$(build_date) \
 		--build-arg version=$(VERSION) \
-		--file docker-apt-cacher-ng/$(dockerfile) \
-		--tag $(NAMESPACE)/docker-apt-cacher-ng:$(VERSION) 
+		--file $(dockerfile) \
+		--tag docker-apt-cacher-ng:$(VERSION) 
 	
 
 run:
